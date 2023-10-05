@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주루마블 게임</title>
     <link rel="stylesheet" href="asset/style.css" />
-    <link rel="stylesheet" href="/global/common.css" />
+    <link rel="stylesheet" href="global/common.css" />
     <script src="asset/script.js"></script>
   </head>
   <body>
-    <button id="settings-btn" onclick="location.href='./setting'">설정</button>
+    <button id="settings-btn">
+      <div class="container">
+        <img src="./static/setting.png" alt="설정아이콘" />
+      </div>
+    </button>
     <div id="grid">
       <div class="image-container">
-        <img src="./static/맥주.png" alt="맥주" />
+        <img src="./static/beer.png" alt="맥주" />
       </div>
       <div id="grid2">
         <div id="title">주루마블</div>
@@ -27,15 +31,12 @@
         </div>
 
         <div id="start-section">
-          <button class="start-btn" onclick="location.href='./select'">
-            시작하기
-          </button>
+          <button class="start-btn">시작하기</button>
         </div>
       </div>
       <div class="image-container2">
-        <img src="./static/소주.png" alt="소주" />
+        <img src="./static/soju.png" alt="소주" />
       </div>
     </div>
-    <script src="scripts.js"></script>
   </body>
 </html>

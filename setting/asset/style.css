@@ -1,80 +1,132 @@
 /* styles.css */
 @font-face {
-    font-family: 'NanumBarunpen';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "NanumBarunpen";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 body {
-    font-family: 'NanumBarunpen', sans-serif;
-    display: flex;
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-    font-size: 30px;
-    font-weight: bold;
+  font-family: "NanumBarunpen", sans-serif;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100vw;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border: 4px solid black;
+  border-radius: 40px;
+  background-color: #fffbe4;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+img {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.배경음악 {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.효과음 {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 0.3fr 2.8fr;
+  gap: 6%;
+  margin-left: 8%;
+  margin-right: 8%;
+  align-items: center;
+}
+button {
+  border: 4px solid black;
+  border-radius: 25%;
+  width: 60px;
+  height: 60px;
+  background-color: #d9d9d9;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover {
+  cursor: pointer;
+}
+
+@media all and (max-width: 1023px) {
+  body {
+    font-size: 20px;
   }
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border: 3px solid black;
+  }
+  .container {
+    border: 3px solid black;
+  }
+}
 
-.container{
-    width: 1000px;
-    height: 550px;
-    margin: auto;
-    border: 4px solid black;
-    border-radius: 40px;
-    background-color: #FFFBE4;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-img{
-    width: 60px;
-    height: 60px;
-}
-.배경음악{
+@media all and (max-width: 767px) {
+  body {
+    font-size: 17px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  button {
+    width: 30px;
+    height: 30px;
     border: 2px solid black;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45px;
-}
-.효과음{
+  }
+  .배경음악,
+  .효과음 {
+    border: 1px solid black;
+  }
+  .container {
     border: 2px solid black;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45px;
+  }
 }
-.box{
-    width: 100%;    
-}
-#grid1{
+@media all and (max-width: 540px) {
+  .grid {
     display: grid;
-    grid-template-columns: 154px 60px 500px;
-    gap: 50px;
-    margin-left: 60px;
-    margin-bottom: 100px;
-}
-#grid2{
-    display: grid;
-    grid-template-columns: 154px 60px 500px;
-    gap: 50px;
-    margin-left: 60px;
-
-}
-button{
-    border: 4px solid black;
-    border-radius: 25%;
-    width: 60px;
-    height: 60px;
-    background-color: #D9D9D9;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 65px;
-    font-weight: 50px;
+    grid-template-columns: 1fr 2fr;
+  }
+  #backgroundMusic {
+    grid-column: -3/-1;
+  }
+  #soundEffects {
+    grid-column: -3/-1;
+  }
 }

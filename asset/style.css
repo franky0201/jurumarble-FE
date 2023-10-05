@@ -1,135 +1,112 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100vh;
   background-color: white;
-  margin: 0 auto;
+  margin: 0;
 }
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+#grid2 {
+  display: grid;
+  grid-template-rows: 38vh 30vh 30vh;
+}
+
 #title {
-  width: 921px;
-  height: 209px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "PyeongChangPeace-Bold", sans-serif;
-}
-.container {
-  width: 1920px;
-  height: 1080px;
-  padding: 20px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  font-size: 160px;
+  color: #f5f0bb;
+  letter-spacing: 30px;
+  text-shadow: -6px 0px black, 0px 6px black, 6px 0px black, 0px -6px black;
 }
 
-#grid {
-  /*border:5px solid pink;*/
-  display: grid;
-  grid-template-columns: 455px 1010px 455px;
-}
-#grid2 {
-  /* border:1px solid red;*/
-  display: grid;
-  grid-template-rows: 360px 360px 360px;
-}
-div {
-  /* border:5px solid gray;*/
-}
-#title {
-  font-size: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 #player-count {
-  /*  border: 5px solid pink;*/
   display: grid;
   grid-template-rows: 1fr 1fr;
-  align-items: center;
+  place-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
+
 #start-section {
   display: flex;
-  align-items: center;
+  place-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
 
 .start-btn {
-  width: 583px;
-  height: 174px;
-  font-size: 150px;
+  width: 30.36vw;
+  height: 16.1vh;
+  font-size: 90px;
+  letter-spacing: 30px;
   border: none;
   background-color: white;
   color: black;
-  border: 3px solid black;
-  border-radius: 4px;
+  border: 0.15vw solid black;
+  border-radius: 0.21vw;
   cursor: pointer;
-  line-height: 174px;
-  text-align: center;
-}
-
-.start-btn:hover {
-  background-color: var(--color-hover);
 }
 
 #player-count span:first-child {
-  font-size: 55px;
+  font-size: 45px;
 }
 
 #count {
-  font-size: 48px;
+  font-size: 50px;
 }
+
 #player-count > div:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#player-count button:first-child,
+
+#player-count button {
+  cursor: pointer;
+}
+
+#player-count button:first-child {
+  margin-right: 40px;
+}
 #count {
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 #player-count button:last-child {
-  margin-left: 10px;
+  margin-left: 40px;
 }
+
 button {
   font-family: "NanumBarunpen", sans-serif;
 }
+
 span {
   font-family: "NanumBarunpen", sans-serif;
 }
-.image-container {
-  width: 455px;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
-.image-container img {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
+.image-container,
 .image-container2 {
-  width: 455px;
+  width: 23.7vw;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-
+.image-container img,
 .image-container2 img {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
+
 .btn {
   font-size: 40px;
   background-color: white;
@@ -140,17 +117,58 @@ span {
   position: absolute;
   top: 15px;
   right: 15px;
-  padding: 10px 20px;
-  font-size: 18px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
   background-color: white;
-  border: 2px solid black;
-  font-family: "NanumBarunpen", sans-serif;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  z-index: 3;
 }
 
-#settings-btn:hover {
-  background-color: #f4f4f4;
+:root {
+  --color-hover: #f4f4f4;
+}
+
+#settings-btn,
+.start-btn {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: var(--color-hover);
+}
+@media all and (max-width: 1130px) {
+  #title {
+    font-size: 130px;
+  }
+  .start-btn {
+    font-size: 70px;
+  }
+}
+@media all and (max-width: 920px) {
+  #title {
+    font-size: 100px;
+  }
+  .start-btn {
+    font-size: 50px;
+  }
+}
+@media all and (max-width: 710px) {
+  #title {
+    font-size: 70px;
+  }
+}
+.container {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container > img {
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
