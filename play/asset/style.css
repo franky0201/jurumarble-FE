@@ -25,12 +25,18 @@ img {
 
 .player {
   background-color: white;
-  height: 40px;
-  width: 80%;
+  height: 70px;
+  flex-grow:1;
   display: flex;
   align-items: center;
   padding-left: 10px;
-  font-size: 12px;
+  font-size: 20px;
+}
+
+.player img {
+  height:68px;
+  width:68px;
+  margin-left:35%
 }
 
 .left {
@@ -43,8 +49,14 @@ img {
 .logo {
   border-radius: 150%;
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
+}
+
+/*병뚜껑 워터마크까지 이미지 사이즈에 포함이라 나중에 수정예정*/
+.logo img{
+  width:70px;
+  height:70px;
 }
 
 .players {
@@ -52,6 +64,7 @@ img {
   gap: 5%;
   width: 100%;
 }
+
 
 button:hover {
   cursor: pointer;
@@ -69,11 +82,12 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 5px;
+  font-size:30px
 }
 
 .glass img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .map {
@@ -140,4 +154,70 @@ button:hover {
 
 :is(#cell_23, #cell_24, #cell_25, #cell_26, #cell_27, #cell_28)::before {
   background-color: #f7b0d3;
+}
+
+#rolldice {
+  position: fixed;
+  top : 750px;
+  right: 50px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px;
+  width: 400px;
+  height: 100px;
+  font-size:30px;
+  font-family:'NanumBarunpen', sans-serif;
+  border-radius:15px;
+}
+
+#rolldice img {
+  width: 95px;
+  height: 95px;
+  position : absolute;
+  left:3%;
+  top:-0%;
+}
+
+.islandevent {
+  position:fixed;
+  top: 42px;
+  left: 540px;
+}
+
+.islandevent img {
+  height:103px;
+  width:103px;
+}
+
+.addevent {
+  position:fixed;
+  bottom: 37px;
+  left: 541px;
+}
+
+.addevent img {
+  height:103px;
+  width:103px;
+}
+
+.oneshotevent {
+  position:fixed;
+  top: 42px;
+  right: 540px;
+}
+
+.oneshotevent img {
+  height:103px;
+  width:103px;
+}
+
+.start {
+  position:fixed;
+  bottom: 38px;
+  right: 541px;
+}
+
+.start img {
+  height:103px;
+  width:103px;
 }
