@@ -68,4 +68,10 @@ const resizing = () => {
     elem.style.width = `${cell_size}px`;
     elem.style.height = `${cell_size}px`;
   }
+
+  const corner = document.getElementsByClassName("corner");
+  for (let i = 0; i < corner.length; i++) {
+    corner[i].style.width = `${cell_size}px`;
+    corner[i].style.height = `${cell_size}px`;
+  }
 };
