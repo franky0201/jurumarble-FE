@@ -1,4 +1,3 @@
-
 body {
   margin: 0px;
   padding: 0px;
@@ -27,7 +26,7 @@ img {
 .player {
   background-color: white;
   height: 70px;
-  width:400px;
+  width: 400px;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -76,6 +75,7 @@ button:hover {
   flex-direction: column;
   padding: 25px 20px;
   font-size: 15px;
+  position: relative;
 }
 
 .counter {
@@ -285,6 +285,33 @@ button:hover {
   font-size: 20px;
 }
 
+.explain {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 270px;
+  overflow: hidden;
+}
+
+.explain img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.overlaytext1,
+.overlaytext2,
+.overlaytext3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
 .dice-image {
   display: none;
   position: fixed;
@@ -298,4 +325,15 @@ button:hover {
 
 .dice-image[active] {
   display: flex;
+}
+.overlaytext1 {
+  top: 40%;
+}
+
+.overlaytext2 {
+  top: 55%;
+}
+
+.overlaytext3 {
+  top: 70%;
 }
