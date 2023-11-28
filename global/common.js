@@ -1,41 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const bg = document.getElementById('bg');
-    const se = document.getElementById('se');
-    const buttons = document.querySelectorAll('button');
+const baseURL = "http://13.114.181.168:8080";
 
-    // 버튼 클릭 시 효과음 재생
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            playSoundEffect();
-        });
-    });
+window.addEventListener("load", () => {
+  const bgTag = document.getElementById("bg");
+  const seTag = document.getElementById("se");
 
-    // 쿠키에서 저장된 볼륨 값 가져오기
-    const backgroundMusicVolume = getCookie('backgroundMusicVolume');
-    const soundEffectsVolume = getCookie('soundEffectsVolume');
+  const bgVolume = getCookie("backgroundMusicVolume");
+  const seVolume = getCookie("soundEffectsVolume");
 
-    // 쿠키가 존재하는 경우, 볼륨 설정
-    if (backgroundMusicVolume) {
-        bg.volume = backgroundMusicVolume;
-    }
-    if (soundEffectsVolume) {
-        se.volume = soundEffectsVolume;
-    }
+  if (bgTag && bgVolume) bgTag.volume = bgVolume;
+  if (seTag && seVolume) seTag.volume = seVolume;
 
+  const id = sessionStorage.getItem("gameId");
+  if (id === null) {
+  } else if (location.pathname !== "/play/") {
+    location.href = "/play";
+  }
 });
 
 function playSoundEffect() {
-    const sound = document.getElementById('se');
-    sound.play();
+  const sound = document.getElementById("se");
+  sound.play();
 }
 
 function getCookie(cookieName) {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(cookieName + '=')) {
-            return cookie.substring(cookieName.length + 1);
-        }
+  const cookies = document.cookie.split(";");
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(cookieName + "=")) {
+      return cookie.substring(cookieName.length + 1);
     }
-    return null;
+  }
+  return null;
 }
