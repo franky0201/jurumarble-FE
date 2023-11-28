@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'NanumBarunpen';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,17 +45,92 @@ body {
 .user input {
   text-align: center;
   font-size: 20px;
-  margin: 0px auto;
+  margin: 20px auto;
   padding: 6px;
 }
 
 button {
-  font-family: "NanumBarunpen";
+  font-family: 'NanumBarunpen';
   height: 50px;
   width: 220px;
   font-size: 30px;
   background-color: blanchedalmond;
   position: absolute;
-  left: 44%;
+  left: 43%;
   bottom: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    width: 1300px;
+  }
+  .user img {
+    height: 200px;
+  }
+  #btn {
+    left: 41%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+  .user img {
+    height: 180px;
+  }
+
+  #btn {
+    left: 40%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 900px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 3px;
+  }
+  .user img {
+    height: 130px;
+  }
+  #btn {
+    left: 38%;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+  }
+  .user img {
+    height: 130px;
+  }
+  .user input {
+    width: 200px;
+  }
+  #btn {
+    left: 36%;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+  }
+  .user img {
+    height: 120px;
+  }
+  .user input {
+    width: 150px;
+  }
+  #btn {
+    width: 150px;
+    left: 37%;
+  }
 }
