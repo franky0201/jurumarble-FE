@@ -54,7 +54,15 @@ body {
   border: 0.15vw solid black;
   border-radius: 0.21vw;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 30px; 
 }
+
+
+
 
 #player-count span:first-child {
   font-size: 45px;
@@ -143,6 +151,12 @@ span {
   .start-btn {
     font-size: 70px;
   }
+  #player-count span:first-child {
+    font-size: 38px;
+  }
+  #count {
+    font-size: 45px;
+  }
 }
 @media all and (max-width: 1220px) {
   #title {
@@ -150,6 +164,12 @@ span {
   }
   .start-btn {
     font-size: 60px;
+  }
+  #player-count span:first-child {
+    font-size: 32px;
+  }
+  #count {
+    font-size: 38px;
   }
 }
 @media all and (max-width: 1150px) {
@@ -159,6 +179,12 @@ span {
   .start-btn {
     font-size: 50px;
   }
+  #player-count span:first-child {
+    font-size: 28px;
+  }
+  #count {
+    font-size: 32px;
+  }
 }
 @media all and (max-width: 955px) {
   #title {
@@ -166,6 +192,20 @@ span {
   }
   .start-btn {
     font-size: 30px;
+  }
+}
+@media all and (max-width: 726px) {
+  #title {
+    font-size: 50px;
+  }
+  .start-btn {
+    font-size: 20px;
+  }
+  #player-count span:first-child {
+    font-size: 20px;
+  }
+  #count {
+    font-size: 23px;
   }
 }
 .container {
