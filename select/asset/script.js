@@ -1,4 +1,11 @@
-window.onload = () => howmany(8);
+window.onload = function () {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const userCount = urlParams.get("userCount");
+  if (userCount !== null && !isNaN(userCount)) {
+    howmany(userCount * 1);
+  }
+};
 
 function howmany(n) {
   const container = document.querySelector(".container");

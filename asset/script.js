@@ -1,21 +1,25 @@
-let count = 1; 
+let count = 2;
 
 function updateDisplay() {
-    document.getElementById("count").textContent = count;
+  document.getElementById("count").textContent = count;
 }
 
 function increment() {
-    count++;
-    updateDisplay();
+  if (count < 8) count++;
+  updateDisplay();
 }
 
 function decrement() {
-    if (count > 1) {
-        count--;
-    }
-    updateDisplay();
+  if (count > 2) {
+    count--;
+  }
+  updateDisplay();
 }
 
-window.onload = function() {
-    updateDisplay();
+window.onload = function () {
+  updateDisplay();
+};
+
+function start() {
+  location.href = "/select/index.html?userCount=" + count;
 }

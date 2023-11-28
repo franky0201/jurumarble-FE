@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'NanumBarunpen';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "NanumBarunpen";
   display: flex;
   margin: 0px;
   padding: 0px;
@@ -24,15 +30,15 @@ body {
 .user {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   padding-top: 35px;
   height: 200px;
 }
 
 .user img {
   display: block;
-  height: 200px;
-  margin: 0px auto;
+  height: 250px;
+  margin: -25px auto;
 }
 
 .user input {
@@ -50,5 +56,5 @@ button {
   background-color: blanchedalmond;
   position: absolute;
   left: 44%;
-  bottom: -30px;
+  bottom: 5px;
 }

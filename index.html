@@ -4,15 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주루마블 게임</title>
-    <link rel="stylesheet" href="asset/style.css" />
-    <link rel="stylesheet" href="global/common.css" />
-    <script src="asset/script.js"></script>
+    <link rel="stylesheet" href="/global/common.css" />
+    <link rel="stylesheet" href="./asset/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/global/common.js"></script>
+    <script src="./asset/script.js"></script>
   </head>
   <body>
+    <audio id="bg" autoplay loop>
+      <source
+        src="setting/static/sound/background-music.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio id="se" preload="auto">
+      <source src="setting/static/sound/soundeffect.mp3" type="audio/mpeg" />
+    </audio>
     <button id="settings-btn">
-      <div class="container">
-        <img src="./static/setting.png" alt="설정아이콘" />
-      </div>
+      <a href="setting" id="settings-btn" class="button-style">
+        <div class="container">
+          <img src="./static/setting.png" alt="설정아이콘" />
+        </div>
+      </a>
     </button>
     <div id="grid">
       <div class="image-container">
@@ -31,7 +44,12 @@
         </div>
 
         <div id="start-section">
-          <button class="start-btn">시작하기</button>
+          <input
+            type="button"
+            class="start-btn"
+            value="시작하기"
+            onclick="start()"
+          />
         </div>
       </div>
       <div class="image-container2">

@@ -85,7 +85,7 @@ body {
   margin-left: 40px;
 }
 
-button {
+input[type="button"] {
   font-family: "NanumBarunpen", sans-serif;
 }
 
@@ -136,15 +136,23 @@ span {
 .start-btn:hover {
   background-color: var(--color-hover);
 }
-@media all and (max-width: 1130px) {
+@media all and (max-width: 1370px) {
   #title {
-    font-size: 130px;
+    font-size: 140px;
   }
   .start-btn {
     font-size: 70px;
   }
 }
-@media all and (max-width: 920px) {
+@media all and (max-width: 1220px) {
+  #title {
+    font-size: 130px;
+  }
+  .start-btn {
+    font-size: 60px;
+  }
+}
+@media all and (max-width: 1150px) {
   #title {
     font-size: 100px;
   }
@@ -152,9 +160,12 @@ span {
     font-size: 50px;
   }
 }
-@media all and (max-width: 710px) {
+@media all and (max-width: 955px) {
   #title {
     font-size: 70px;
+  }
+  .start-btn {
+    font-size: 30px;
   }
 }
 .container {
@@ -167,7 +178,7 @@ span {
 .container > img {
   position: absolute;
   width: 100%;
-  /* height: 100%; */
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

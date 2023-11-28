@@ -3,10 +3,123 @@ body {
   padding: 0px;
   width: 100vw;
   height: 100vh;
+  display: grid;
+  background-color: #eeeeee;
+  grid-template-columns: 1fr 3fr 1fr;
+  position: relative;
+  font-family: "NanumBarunpen";
+}
+
+.setting {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  padding: 0;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.player {
+  background-color: white;
+  height: 70px;
+  width: 400px;
+  flex-grow: 1;
   display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.player img {
+  height: 68px;
+  width: 68px;
+  margin-left: 55%;
+}
+
+.left {
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  padding: 25px 20px;
+}
+
+.logo {
+  border-radius: 150%;
+  background-color: white;
+  width: 70px;
+  height: 70px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.players {
+  display: flex;
+  gap: 5%;
+  width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  padding: 25px 20px;
+  font-size: 15px;
+  position: relative;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: -180px;
+}
+
+.counter img {
+  width: 30px;
+  height: 30px;
+}
+
+.roll {
+  position: absolute;
+  bottom: 0;
+  right: -290px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px;
+  height: 100px;
+  font-size: 30px;
+  font-family: "NanumBarunpen", sans-serif;
+  border-radius: 15px;
+  display: flex;
+  padding-right: 30px;
+}
+
+.roll img {
+  width: 80px;
+  height: 80px;
+  flex-grow: 1;
+}
+
+.roll span {
+  margin: auto;
 }
 
 .map {
+  position: relative;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -21,8 +134,8 @@ body {
 
 .cell {
   display: flex;
+  flex-direction: column;
   border: 1px solid black;
-  padding: 6px;
   box-sizing: border-box;
 }
 
@@ -31,6 +144,198 @@ body {
   font-size: 1rem;
   text-align: center;
   margin: auto;
+  padding: 6px;
+}
+
+.cell[isCorner="false"]::before {
+  content: "";
+  width: 100%;
+  height: 25px;
+}
+
+#cell_1 {
+  background-color: #4f79ceaf;
+}
+
+:is(#cell_2, #cell_3, #cell_4, #cell_5, #cell_6, #cell_7)::before {
+  background-color: #acdfff6c;
+}
+
+#cell_8 {
+  background-color: #5ac0ff9a;
+}
+
+:is(#cell_9, #cell_10, #cell_11, #cell_12, #cell_13, #cell_14)::before {
+  background-color: #3098d9;
+}
+
+#cell_15 {
+  background-color: #9295df97;
+}
+
+:is(#cell_16, #cell_17, #cell_18, #cell_19, #cell_20, #cell_21)::before {
+  background-color: #a6a8d7;
+}
+
+#cell_22 {
+  background-color: #efbcd5b5;
+}
+
+:is(#cell_23, #cell_24, #cell_25, #cell_26, #cell_27, #cell_28)::before {
+  background-color: #f7b0d3;
+}
+
+.corner {
+  position: absolute;
+}
+
+.corner:is(:nth-child(1), :nth-child(2)) {
+  top: 0;
+}
+
+.corner:is(:nth-child(3), :nth-child(4)) {
+  bottom: 0;
+}
+
+.corner:is(:nth-child(1), :nth-child(3)) {
+  left: 0;
+}
+
+.corner:is(:nth-child(2), :nth-child(4)) {
+  right: 0;
+}
+
+/* 모달창 스타일 */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 375px;
+  height: 570px;
+  background-color: transparent;
+  perspective: 1000px;
+  top: calc(100vh + 50%);
+}
+
+.modal-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.modal:hover .modal-inner {
+  transform: rotateY(180deg);
+}
+
+.modal-front,
+.modal-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* 이미지 스타일 */
+.modal-front img {
+  width: 100%; /* 이미지를 컨테이너 크기에 맞춤 */
+  height: 100%; /* 이미지를 컨테이너 크기에 맞춤 */
+}
+
+.modal-back {
+  transform: rotateY(180deg);
+}
+
+.modal-back {
+  position: relative;
+}
+
+.modal-back .main-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.modal-back .overlay-image {
+  position: absolute;
+  top: 24%;
+  left: 40px;
+  width: calc(100% - 80px);
+  height: auto;
+  z-index: 2;
+}
+
+.modal-back .overlay-text {
+  position: absolute;
+  top: 80%;
+  left: 40px;
+  width: calc(100% - 80px);
+  text-align: center;
+  z-index: 3;
+  color: black;
+  font-size: 20px;
+}
+
+.explain {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 270px;
+  overflow: hidden;
+}
+
+.explain img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.overlaytext1,
+.overlaytext2,
+.overlaytext3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
+.dice-image {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  left: calc(50vw - 100px);
+  top: calc(50vh - 100px);
+  margin: auto;
+  border-radius: 15px;
+}
+
+.dice-image[active] {
+  display: flex;
+}
+.overlaytext1 {
+  top: 40%;
+}
+
+.overlaytext2 {
+  top: 55%;
+}
+
+.overlaytext3 {
+  top: 70%;
 }
 #cell_10 {
   background-color: #5ac0ff9a;
