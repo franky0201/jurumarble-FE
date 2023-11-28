@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body> 
     <div class="left">
       <div class="players">
         <div class="logo">
@@ -34,51 +34,54 @@
       <img src="static/oneshot.png" class="corner" />
       <img src="static/add.png" class="corner" />
       <img src="static/start.png" class="corner" />
-      <section class="counter">
-        <img src="static/glass.svg" /><span id="drink-counter"
-          >0잔 축적됨!</span
-        >
-      </section>
-      <div class="cells"></div>
-      <button class="roll" onclick="rollDice()">
-        <img src="static/dice.png" /><span>주사위 굴리기</span>
-      </button>
+      
     </div>
-    <img src="" alt="" id="dice-image" class="dice-image" />
     <div class="right">
+          <section class="counter">
+            <img src="static/glass.svg" /><span id="drink-counter"
+              >0잔 축적됨!</span
+            >
+          </section>
+          <div class="cells"></div>
+          <button class="roll" onclick="rollDice()">
+            <img src="static/dice.png" /><span>주사위 굴리기</span>
+          </button>
       <div class="explain">
         <img src="static/explain.png" alt="룰 설명칸" />
         <div class="overlaytext1">여기에 텍스트를 쓰세요</div>
         <div class="overlaytext2">여기에 텍스트를 쓰세요</div>
         <div class="overlaytext3">여기에 텍스트를 쓰세요</div>
       </div>
+      <button class="setting">
+        <img src="static/setting.png" />
+      </button>
     </div>
-    <button class="setting">
-      <img src="static/setting.png" />
-    </button>
     <div id="myModal" class="modal">
-      <div class="modal-inner">
-        <div class="modal-front">
-          <img
-            id="modalImage"
-            src="./static/goldkeyback.png"
-            alt="Center Image"
-          />
-        </div>
-        <div class="modal-back">
-          <img
-            src="./static/goldkeyfront.png"
-            alt="Main Image"
-            class="main-image"
-          />
-          <img
-            src="./static/angel.png"
-            alt="Overlay Image"
-            class="overlay-image"
-          />
-          <div class="overlay-text">여기에 텍스트를 쓰세요</div>
+        <div class="modal-inner">
+          <div class="modal-front">
+            <img
+              id="modalImage"
+              src="./static/goldkeyback.png"
+              alt="Center Image"
+            />
+          </div>
+          <div class="modal-back">
+            <img
+              src="./static/goldkeyfront.png"
+              alt="Main Image"
+              class="main-image"
+            />
+            <img
+              src="./static/angel.png"
+              alt="Overlay Image"
+              class="overlay-image"
+            />
+            <div class="overlay-text">여기에 텍스트를 쓰세요</div>
+          </div>
         </div>
       </div>
-    </div>
+    
+      
+    
   </body>
 </html>
