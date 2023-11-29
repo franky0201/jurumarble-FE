@@ -84,7 +84,8 @@ button:hover {
   gap: 5px;
   font-size: 30px;
   position: absolute;
-  top: 0;
+  top: 50px;
+  left : 0px;
 }
 
 .counter img {
