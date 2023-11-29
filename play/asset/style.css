@@ -5,7 +5,7 @@ body {
   height: 100vh;
   display: grid;
   background-color: #eeeeee;
-  grid-template-columns: 1fr 3fr 1fr 0fr;
+  grid-template-columns: 1.4fr 3fr 1fr ;
   position: relative;
   font-family: "NanumBarunpen";
 }
@@ -84,7 +84,8 @@ button:hover {
   gap: 5px;
   font-size: 30px;
   position: absolute;
-  top: 0;
+  top: 50px;
+  left : 0px;
 }
 
 .counter img {
@@ -104,6 +105,7 @@ button:hover {
   border-radius: 15px;
   display: flex;
   padding-right: 30px;
+  bottom : 50px;
 }
 
 .roll img {
@@ -334,4 +336,457 @@ button:hover {
 
 .overlaytext3 {
   top: 70%;
+}
+
+@media (max-width: 2000px) {
+  .player {
+  height: 70px;
+  padding-left: 10px;
+  font-size: 25px;
+  }
+
+  .player img {
+    height: 70px;
+    width: 70px;
+    margin-left: 48%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .counter {
+    font-size: 35px;
+  }
+
+  .counter img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .roll {
+    height: 100px;
+    font-size: 35px;
+  }
+  
+  .roll img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .explain {
+    width: 300px;
+    height: 350px;
+    left : 140px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width:1950px) {
+  .player img {
+    margin-left: 45%;
+  }
+}
+
+@media (max-width:1900px) {
+  .player img {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width:1850px) {
+  .player img {
+    margin-left: 38%;
+  }
+}
+
+@media (max-width:1850px) {
+  .player img {
+    margin-left: 35%;
+  }
+
+  .roll {
+    width : 230px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width:1800px) {
+  .player img {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width:1750px) {
+  .player img {
+    margin-left: 25%;
+  }
+}
+
+
+@media (max-width: 1500px) {
+  .player {
+  height: 50px;
+  padding-left: 10px;
+  font-size: 15px;
+  }
+
+  .player img {
+    height: 50px;
+    width: 50px;
+    margin-left: 50%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .counter {
+    font-size: 25px;
+  }
+
+  .counter img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .roll {
+    height: 80px;
+    font-size: 18px;
+  }
+  
+  .roll img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .player {
+  height: 50px;
+  padding-left: 10px;
+  font-size: 15px;
+  }
+
+  .player img {
+    height: 50px;
+    width: 50px;
+    margin-left: 48%;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .counter {
+    font-size: 25px;
+  }
+
+  .counter img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .roll {
+    height: 80px;
+    font-size: 18px;
+  }
+  
+  .roll img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:1400px) {
+  .player img {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width:1300px) {
+  .player img {
+    margin-left: 20%;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .player {
+  height: 40px;
+  padding-left: 10px;
+  font-size: 10px;
+  }
+
+  .player img {
+    height: 40px;
+    width: 40px;
+    margin-left: 17%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .counter {
+    font-size: 20px;
+  }
+
+  .counter img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .roll {
+    height: 70px;
+    font-size: 20px;
+  }
+  
+  .roll img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .player {
+  height: 30px;
+  padding-left: 10px;
+  font-size: 7px;
+  }
+
+  .player img {
+    height: 30px;
+    width: 30px;
+    margin-left: 25%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .counter {
+    font-size: 10px;
+  }
+
+  .counter img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .roll {
+    height: 60px;
+    font-size: 15px;
+  }
+  
+  .roll img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .player {
+  height: 30px;
+  padding-left: 10px;
+  font-size: 7px;
+  }
+
+  .player img {
+    height: 30px;
+    width: 30px;
+    margin-left: 30%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .counter {
+    font-size: 10px;
+  }
+
+  .counter img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .roll {
+    height: 60px;
+    font-size: 15px;
+  }
+  
+  .roll img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 700px) {
+  .player {
+  height: 20px;
+  padding-left: 10px;
+  font-size: 5px;
+  }
+
+  .player img {
+    height: 20px;
+    width: 20px;
+    margin-left: 0%;
+  }
+
+  .logo {
+    border-radius: 150%;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+  }
+
+  .logo img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .counter {
+    font-size: 10px;
+  }
+
+  .counter img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .roll {
+    height: 60px;
+    font-size: 15px;
+  }
+  
+  .roll img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .explain {
+    width: 210px;
+    height: 240px;
+    left : 120px;
+  }
+  
+  .overlaytext1,
+  .overlaytext2,
+  .overlaytext3 {
+    font-size: 4px;
+  }
 }
