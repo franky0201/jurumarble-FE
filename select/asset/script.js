@@ -26,7 +26,7 @@ function howmany(n) {
 
     str += `
         <div class="user">
-            <img src="./static/cap_${i}.png" />
+            <img src="./static/cap${i}.png" />
             <input type="text" placeholder="플레이어명(팀명)"/>
         </div>
     `;
