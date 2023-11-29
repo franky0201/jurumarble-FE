@@ -13,16 +13,19 @@ window.addEventListener("load", () => {
   const id = sessionStorage.getItem("gameId");
   if (id === null) {
   } else if (location.pathname !== "/play/") {
-    location.href = "/play";
+    $.ajax({
+      url: `${baseURL}/api/v1/status/${id}`,
+      type: "GET",
+      contentType: "application/json",
+      success: (res) => {
+        if (res === "") sessionStorage.removeItem("gameId");
+        else location.href = "/play";
+      },
+    });
   }
 });
 
-function playSoundEffect() {
-  const sound = document.getElementById("se");
-  sound.play();
-}
-
-function getCookie(cookieName) {
+const getCookie = (cookieName) => {
   const cookies = document.cookie.split(";");
   for (let i = 0; i < cookies.length; i++) {
     const cookie = cookies[i].trim();
@@ -31,4 +34,4 @@ function getCookie(cookieName) {
     }
   }
   return null;
-}
+};

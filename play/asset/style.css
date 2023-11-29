@@ -5,7 +5,7 @@ body {
   height: 100vh;
   display: grid;
   background-color: #eeeeee;
-  grid-template-columns: 1.4fr 3fr 1fr ;
+  grid-template-columns: 1.4fr 3fr 1fr;
   position: relative;
   font-family: "NanumBarunpen";
 }
@@ -74,8 +74,7 @@ button:hover {
   flex-direction: column;
   padding: 25px 20px;
   font-size: 15px;
-  position:relative;
-  
+  position: relative;
 }
 
 .counter {
@@ -85,7 +84,7 @@ button:hover {
   font-size: 30px;
   position: absolute;
   top: 50px;
-  left : 0px;
+  left: 0px;
 }
 
 .counter img {
@@ -105,7 +104,7 @@ button:hover {
   border-radius: 15px;
   display: flex;
   padding-right: 30px;
-  bottom : 50px;
+  bottom: 50px;
 }
 
 .roll img {
@@ -140,7 +139,7 @@ button:hover {
 }
 
 .cell span {
-  font-family: 'NanumBarunpen';
+  font-family: "NanumBarunpen";
   font-size: 1rem;
   text-align: center;
   margin: auto;
@@ -340,9 +339,9 @@ button:hover {
 
 @media (max-width: 2000px) {
   .player {
-  height: 70px;
-  padding-left: 10px;
-  font-size: 25px;
+    height: 70px;
+    padding-left: 10px;
+    font-size: 25px;
   }
 
   .player img {
@@ -376,7 +375,7 @@ button:hover {
     height: 100px;
     font-size: 35px;
   }
-  
+
   .roll img {
     width: 75px;
     height: 75px;
@@ -385,9 +384,9 @@ button:hover {
   .explain {
     width: 300px;
     height: 350px;
-    left : 140px;
+    left: 140px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -395,53 +394,52 @@ button:hover {
   }
 }
 
-@media (max-width:1950px) {
+@media (max-width: 1950px) {
   .player img {
     margin-left: 45%;
   }
 }
 
-@media (max-width:1900px) {
+@media (max-width: 1900px) {
   .player img {
     margin-left: 40%;
   }
 }
 
-@media (max-width:1850px) {
+@media (max-width: 1850px) {
   .player img {
     margin-left: 38%;
   }
 }
 
-@media (max-width:1850px) {
+@media (max-width: 1850px) {
   .player img {
     margin-left: 35%;
   }
 
   .roll {
-    width : 230px;
+    width: 230px;
     font-size: 22px;
   }
 }
 
-@media (max-width:1800px) {
+@media (max-width: 1800px) {
   .player img {
     margin-left: 30%;
   }
 }
 
-@media (max-width:1750px) {
+@media (max-width: 1750px) {
   .player img {
     margin-left: 25%;
   }
 }
 
-
 @media (max-width: 1500px) {
   .player {
-  height: 50px;
-  padding-left: 10px;
-  font-size: 15px;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 15px;
   }
 
   .player img {
@@ -475,7 +473,7 @@ button:hover {
     height: 80px;
     font-size: 18px;
   }
-  
+
   .roll img {
     width: 65px;
     height: 65px;
@@ -484,9 +482,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -496,9 +494,9 @@ button:hover {
 
 @media (max-width: 1400px) {
   .player {
-  height: 50px;
-  padding-left: 10px;
-  font-size: 15px;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 15px;
   }
 
   .player img {
@@ -530,7 +528,7 @@ button:hover {
     height: 80px;
     font-size: 18px;
   }
-  
+
   .roll img {
     width: 65px;
     height: 65px;
@@ -539,9 +537,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -549,25 +547,23 @@ button:hover {
   }
 }
 
-@media (max-width:1400px) {
+@media (max-width: 1400px) {
   .player img {
     margin-left: 40%;
   }
 }
 
-@media (max-width:1300px) {
+@media (max-width: 1300px) {
   .player img {
     margin-left: 20%;
   }
 }
 
-
-
 @media (max-width: 1200px) {
   .player {
-  height: 40px;
-  padding-left: 10px;
-  font-size: 10px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 10px;
   }
 
   .player img {
@@ -601,7 +597,7 @@ button:hover {
     height: 70px;
     font-size: 20px;
   }
-  
+
   .roll img {
     width: 60px;
     height: 60px;
@@ -610,9 +606,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -622,9 +618,9 @@ button:hover {
 
 @media (max-width: 1000px) {
   .player {
-  height: 30px;
-  padding-left: 10px;
-  font-size: 7px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 7px;
   }
 
   .player img {
@@ -658,7 +654,7 @@ button:hover {
     height: 60px;
     font-size: 15px;
   }
-  
+
   .roll img {
     width: 50px;
     height: 50px;
@@ -667,9 +663,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -679,9 +675,9 @@ button:hover {
 
 @media (max-width: 900px) {
   .player {
-  height: 30px;
-  padding-left: 10px;
-  font-size: 7px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 7px;
   }
 
   .player img {
@@ -715,7 +711,7 @@ button:hover {
     height: 60px;
     font-size: 15px;
   }
-  
+
   .roll img {
     width: 50px;
     height: 50px;
@@ -724,9 +720,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {
@@ -736,9 +732,9 @@ button:hover {
 
 @media (max-width: 700px) {
   .player {
-  height: 20px;
-  padding-left: 10px;
-  font-size: 5px;
+    height: 20px;
+    padding-left: 10px;
+    font-size: 5px;
   }
 
   .player img {
@@ -772,7 +768,7 @@ button:hover {
     height: 60px;
     font-size: 15px;
   }
-  
+
   .roll img {
     width: 50px;
     height: 50px;
@@ -781,9 +777,9 @@ button:hover {
   .explain {
     width: 210px;
     height: 240px;
-    left : 120px;
+    left: 120px;
   }
-  
+
   .overlaytext1,
   .overlaytext2,
   .overlaytext3 {

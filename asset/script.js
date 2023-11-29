@@ -21,5 +21,5 @@ window.onload = function () {
 };
 
 function start() {
-  location.href = "/select/index.html?userCount=" + count;
+  location.href = "/select/?count=" + count;
 }
