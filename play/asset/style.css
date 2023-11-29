@@ -338,6 +338,11 @@ button:hover {
   top: 70%;
 }
 
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
 @media (max-width: 2000px) {
   .player {
   height: 70px;
@@ -549,11 +554,6 @@ button:hover {
   }
 }
 
-@media (max-width:1400px) {
-  .player img {
-    margin-left: 40%;
-  }
-}
 
 @media (max-width:1300px) {
   .player img {

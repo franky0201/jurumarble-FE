@@ -4,6 +4,49 @@ const env = {
 
 const cells = new Array();
 
+const placeCircles = () => {
+  const cells = document.querySelectorAll(".cell");
+  const images = [];
+
+  // 이미지 경로 설정
+  for (let i = 1; i <= 8; i++) {
+    images.push(`static/cap${i}.png`);
+  }
+
+  cells.forEach((cell) => {
+    const numCircles = Math.floor(Math.random() * 9); // 각 cell에 표시할 원의 개수 (0~8개 중에서 무작위로 선택)
+    const cellSize = cell.clientWidth; // cell의 너비를 기준으로 함
+    const circleSize = cellSize / 5; //사이즈 조절
+    const gap = 2; // 간격 설정
+    const margin = 2; // 원과 cell 사이의 여백
+
+
+    for (let i = 0; i < numCircles; i++) {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      
+      const circleImage = new Image();
+      circleImage.classList.add("circle-image");
+      circleImage.src = images[i % images.length]; // 이미지 경로 설정 
+      
+      
+      circleImage.style.width = `${circleSize}px`;
+      circleImage.style.height = `${circleSize}px`;
+
+      const row = Math.floor(i / 4); // 행 번호 계산
+      const col = i % 4; // 열 번호 계산
+
+      circle.style.top = `${row * (circleSize + 5)}px`; 
+      circle.style.left = `${col * (circleSize + 5)}px`; 
+
+      circle.appendChild(circleImage);
+      cell.appendChild(circle);
+    }
+  });
+};
+
+
+
 window.onload = async () => {
   $.ajax({
     url: "./static/cell.json",
@@ -13,6 +56,7 @@ window.onload = async () => {
       load(() => {
         reading();
         resizing();
+        placeCircles(5);
       });
     },
   });
@@ -82,3 +126,35 @@ const rollDice = () => {
   image.src = `static/dice${randomNumber}.png`;
   image.setAttribute("active", "");
 };
+
+/* const MAX_CIRCLES = 8; // 최대 원 개수
+
+const addCircles = (count) => {
+  const map = document.querySelector('.map');
+  map.innerHTML = ''; // 기존 원 삭제
+
+  for (let i = 0; i < count; i++) {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    map.appendChild(circle);
+  }
+};
+
+const updateCircles = () => {
+  const cell_size = (Math.min(window.innerHeight, window.innerWidth) - 100) / 8;
+  const circles = document.querySelectorAll('.circle');
+
+  circles.forEach(circle => {
+    circle.style.width = `${cell_size / 8}px`;
+    circle.style.height = `${cell_size / 8}px`;
+  });
+};
+
+window.onload = () => {
+  addCircles(4); // 초기에 4개의 원 생성
+  updateCircles(); // 크기 업데이트
+};
+
+window.onresize = () => {
+  updateCircles(); // 창 크기 변경 시 크기 업데이트
+}; */
