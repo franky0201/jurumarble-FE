@@ -64,6 +64,11 @@ img {
   width: 100%;
 }
 
+.players[turn="true"] div img {
+  border-radius: 100px;
+  outline: 10px solid purple;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -202,6 +207,16 @@ button:hover {
 
 .corner:is(:nth-child(2), :nth-child(4)) {
   right: 0;
+}
+
+.dice {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "PyeongChangPeace-Bold";
+  font-size: 100px;
 }
 
 /* 모달창 스타일 */

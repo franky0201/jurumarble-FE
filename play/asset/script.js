@@ -9,7 +9,7 @@ window.onload = async () => {
     method: "GET",
     success: (res) => {
       cellCode = res;
-      getStatus(() => getMap(() => resizing()));
+      getStatus(() => getMap(() => loadPlayer(() => resizing())));
     },
   });
 };
@@ -20,6 +20,7 @@ window.onresize = () => {
 
 const getStatus = (callback = null) => {
   const gameId = sessionStorage.getItem("gameId");
+  if (!gameId) location.href = "/";
   $.ajax({
     url: `${baseURL}/api/v1/status/${gameId}`,
     method: "GET",
@@ -30,7 +31,7 @@ const getStatus = (callback = null) => {
         location.href = "/";
       } else {
         gameStatus = res;
-        if (callback !== null) callback();
+        if (callback) callback();
       }
     },
   });
@@ -66,24 +67,49 @@ const getMap = (callback = null) => {
         }
         map.appendChild(row);
       }
-      if (callback !== null) callback();
+      if (callback) callback();
     },
   });
 };
 
-const resizing = () => {
-  const cell_size = (Math.min(window.innerHeight, window.innerWidth) - 100) / 8;
-  for (let i = 0; i < (DEPTH - 1) * 4; i++) {
-    const elem = document.getElementsByClassName("cell")[i];
-    elem.style.width = `${cell_size}px`;
-    elem.style.height = `${cell_size}px`;
+const loadPlayer = (callback = null) => {
+  let html = "";
+  for (let i = 0; i < gameStatus.teams.length; i++) {
+    html += `
+      <div class="players">
+        <div class="logo">
+          <img src="static/cap${i + 1}.png" />
+        </div>
+        <div class="player">
+          ${gameStatus.teams[i].name}
+          <!--<img src="static/island.png"  /> n턴 <br />남음!-->
+        </div>
+      </div>
+    `;
   }
+  document.getElementsByClassName("left")[0].innerHTML = html;
+  if (callback) callback();
+};
 
-  const corner = document.getElementsByClassName("corner");
-  for (let i = 0; i < corner.length; i++) {
-    corner[i].style.width = `${cell_size}px`;
-    corner[i].style.height = `${cell_size}px`;
-  }
+const resizing = () => {
+  const set = (size) => {
+    for (let i = 0; i < (DEPTH - 1) * 4; i++) {
+      const elem = document.getElementsByClassName("cell")[i];
+      elem.style.width = `${size}px`;
+      elem.style.height = `${size}px`;
+    }
+
+    const corner = document.getElementsByClassName("corner");
+    for (let i = 0; i < corner.length; i++) {
+      corner[i].style.width = `${size}px`;
+      corner[i].style.height = `${size}px`;
+    }
+  };
+
+  set(0);
+  setTimeout(() => {
+    set((Math.min(window.innerHeight, window.innerWidth) - 100) / 8);
+  }, 1);
 };
 
 const rollDice = () => {
