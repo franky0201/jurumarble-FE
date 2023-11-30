@@ -49,14 +49,37 @@ body {
   padding: 6px;
 }
 
-button {
+#play-count {
+  font-family: 'NanumBarunpen';
+  position : absolute;
+  font-size: 30px;
+  left : 70%;
+  bottom : 12px;
+}
+
+#plus {
+  font-family: 'NanumBarunpen';
+  height : 30px;
+  font-size: 30px;
+  border : none;
+}
+
+#minus {
+  font-family: 'NanumBarunpen';
+  border : none;
+  font-size: 30px;
+  height : 30px;
+
+}
+
+#btn {
   font-family: 'NanumBarunpen';
   height: 50px;
   width: 220px;
   font-size: 30px;
   background-color: blanchedalmond;
   position: absolute;
-  left: 43%;
+  left: 44%;
   bottom: 5px;
   cursor: pointer;
 }
@@ -115,6 +138,10 @@ button {
   #btn {
     left: 36%;
   }
+
+  #play-count {
+    font-size:25px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -132,5 +159,11 @@ button {
   #btn {
     width: 150px;
     left: 37%;
+  }
+
+  #play-count {
+    font-size:20px;
+    height : 40px;
+    left : 67%;
   }
 }
