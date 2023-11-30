@@ -72,6 +72,77 @@ const getMap = (callback = null) => {
   });
 };
 
+/*
+1130 ezcho, 우선 api체크 하고 콘솔로 출력,
+rollDice response 후 황금열쇠 pos%7로 판단
+황금열쇠일경우 goldKey함수 -> 황금열쇠 호출 -> result.name으로 name 확인
+STACK_PUSH, STACK_POP 처리
+STACK_POP 응답 예시
+{"stack":7,"name":"a","id":22,"position":10}
+*/
+const goldKey = () => {
+  $.ajax({
+    url: `${baseURL}/api/v1/goldKey`,
+    method: 'GET',
+    success: function(result) {
+      console.log("GOLDENKEY", result);
+        switch(result.name){
+          case "STACK_PUSH":
+            $.ajax({
+              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_push`,
+              method: "POST"
+            })
+            console.log("STACKPUSH", result);
+            break;
+          case "STACK_POP":
+            $.ajax({
+              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_pop`,
+              method: "POST",
+              success: console.log("STACKPOP", result.name, result.stack)
+            });
+            break;
+          case "BACK":
+            $.ajax({
+              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/back`,
+              method: "POST",
+              success: console.log("BACK", result)
+            });
+            break;
+          default:
+            break;
+          
+        }
+    },
+    error: function(error) {
+        console.error("주사위 굴리기 오류:", error);
+    }
+});
+};
+
+const rollDice = () => {
+  const gameId = sessionStorage.getItem("gameId");
+  const diceValue = Math.floor(Math.random() * 6) + 1;
+  const image = document.getElementById("dice-image");
+  $.ajax({
+        url: `${baseURL}/api/v1/status/${gameId}/dice`,
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ value: diceValue }),
+        success: function(result) {
+          const pos = result.position
+          if((pos%7)==4){
+            goldKey();
+          }
+            console.log(result);
+        },
+        error: function(error) {
+            console.error("주사위 굴리기 오류:", error);
+        }
+    });
+};
+
+
+
 const loadPlayer = (callback = null) => {
   let html = "";
   for (let i = 0; i < gameStatus.teams.length; i++) {
@@ -112,9 +183,9 @@ const resizing = () => {
   }, 1);
 };
 
-const rollDice = () => {
-  const randomNumber = Math.floor(Math.random() * 6) + 1;
-  const image = document.getElementById("dice-image");
-  image.src = `static/dice${randomNumber}.png`;
-  image.setAttribute("active", "");
-};
+// const rollDice = () => {
+//   const randomNumber = Math.floor(Math.random() * 6) + 1;
+//   const image = document.getElementById("dice-image");
+//   image.src = `static/dice${randomNumber}.png`;
+//   image.setAttribute("active", "");
+// };
