@@ -43,6 +43,7 @@ const getMap = (callback = null) => {
     method: "GET",
     contentType: "application/json",
     success: (res) => {
+      console.log("res: ", res);
       res.map((x) => cells.push(x));
       const numArr = [
         15, 16, 17, 18, 19, 20, 21, 22, 14, 23, 13, 24, 12, 25, 11, 26, 10, 27,
@@ -75,6 +76,7 @@ const getMap = (callback = null) => {
 /*
 1130 ezcho, 우선 api체크 하고 콘솔로 출력,
 rollDice response 후 황금열쇠 pos%7로 판단
+
 황금열쇠일경우 goldKey함수 -> 황금열쇠 호출 -> result.name으로 name 확인
 STACK_PUSH, STACK_POP 처리
 STACK_POP 응답 예시
@@ -84,30 +86,9 @@ const goldKey = () => {
   $.ajax({
     url: `${baseURL}/api/v1/goldKey`,
     method: 'GET',
-    success: function(result) {
-      console.log("GOLDENKEY", result);
-        switch(result.name){
-          case "STACK_PUSH":
-            $.ajax({
-              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_push`,
-              method: "POST",
-              success: function(resStack) {
-                console.log("STACKPUSH", resStack.stack);
-                var drinkCounter = document.getElementById("drink-counter");
-                drinkCounter.innerHTML= resStack.stack + "잔 축척됨!"
-              }
-            })
-            break;
-          case "STACK_POP":
-            $.ajax({
-              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_pop`,
-              method: "GET",
-              success: function(resStackPop){
-                console.log("STACKPOP, 마셔야할 잔:", resStackPop.name, resStackPop.stack)
-                var drinkCounter = document.getElementById("drink-counter");
-                drinkCounter.innerHTML= "0잔 축척됨!"}
-            });
-            break;
+    success: function(goldKey) {
+      console.log("황금열쇠: GOLDENKEY", goldKey);
+        switch(goldKey.name){
           case "BACK":
             $.ajax({
               url: `${baseURL}/api/v1/status/${gameStatus.gameId}/back`,
@@ -134,9 +115,41 @@ const rollDice = () => {
         contentType: 'application/json',
         data: JSON.stringify({ value: diceValue }),
         success: function(result) {
-          const pos = result.position
+          const pos = result.position;
           if((pos%7)==4){
             goldKey();
+          }
+          else if(pos==8){
+            $.ajax({
+              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_push`,
+              method: "POST",
+              success: function(resStackPush) {
+                console.log("일반: STACKPUSH", resStackPush.stack);
+                var drinkCounter = document.getElementById("drink-counter");
+                drinkCounter.innerHTML= resStackPush.stack + "잔 축척됨!"
+              }
+            })
+          }
+          else if(pos==22){
+            $.ajax({
+              url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_pop`,
+              method: "GET",
+              success: function(resStackPop){
+                console.log("일반: STACKPOP, 마셔야할 잔:", resStackPop.name, resStackPop.stack)
+                var drinkCounter = document.getElementById("drink-counter");
+                drinkCounter.innerHTML= "0잔 축척됨!"}
+            });
+          }
+          else{
+            $.ajax({
+              url: `${baseURL}/api/v1/game-table/${gameId}`,
+              method: "GET",
+              contentType: "application/json",
+              success: (map) => {
+                const desc = map[pos+1].name;
+                console.log("일반: ", desc);
+              }
+            })
           }
             console.log(result);
         },
