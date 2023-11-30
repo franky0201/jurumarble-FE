@@ -11,6 +11,23 @@ window.onload = function () {
   } else location.href = "/";
 };
 
+let goal = 1;
+//희상이 추가부분
+function increment() {
+if (goal < 3) goal++;
+updateDisplay();
+}
+
+function decrement() {
+if (goal > 1) goal--;
+updateDisplay();
+}
+
+function updateDisplay() {
+document.getElementById("goal").innerText = goal;
+}
+//희상이 추가부분
+
 const render = () => {
   const container = document.querySelector(".container");
   let str = "";
@@ -22,8 +39,20 @@ const render = () => {
       </div>
     `;
   }
-  container.innerHTML = str + `<button id="btn" onclick="play()">설정</button>`;
+  //희상이 추가부분
+  container.innerHTML = str + `
+  <div id="play-count">
+  <span>몇바퀴 돌래?</span>
+  <button id="minus" class="btn">-</button>
+  <span id="goal">${goal}</span>
+  <button id="plus" class="btn">+</button>
+</div>
+<button id="btn" onclick="seletcion()">설정</button><button id="btn" onclick="play()">설정</button>`;
+//희상이 추가부분
+document.getElementById("plus").addEventListener("click", increment);
+document.getElementById("minus").addEventListener("click", decrement);
 };
+
 
 const play = () => {
   const teams = [];
@@ -37,7 +66,7 @@ const play = () => {
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify({
-      goal: 20,
+      goal: goal,
       teams,
     }),
     success: (res) => {
@@ -46,3 +75,4 @@ const play = () => {
     },
   });
 };
+
