@@ -90,27 +90,33 @@ const goldKey = () => {
           case "STACK_PUSH":
             $.ajax({
               url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_push`,
-              method: "POST"
+              method: "POST",
+              success: function(resStack) {
+                console.log("STACKPUSH", resStack.stack);
+                var drinkCounter = document.getElementById("drink-counter");
+                drinkCounter.innerHTML= resStack.stack + "잔 축척됨!"
+              }
             })
-            console.log("STACKPUSH", result);
             break;
           case "STACK_POP":
             $.ajax({
               url: `${baseURL}/api/v1/status/${gameStatus.gameId}/stack_pop`,
-              method: "POST",
-              success: console.log("STACKPOP", result.name, result.stack)
+              method: "GET",
+              success: function(resStackPop){
+                console.log("STACKPOP, 마셔야할 잔:", resStackPop.name, resStackPop.stack)
+                var drinkCounter = document.getElementById("drink-counter");
+                drinkCounter.innerHTML= "0잔 축척됨!"}
             });
             break;
           case "BACK":
             $.ajax({
               url: `${baseURL}/api/v1/status/${gameStatus.gameId}/back`,
               method: "POST",
-              success: console.log("BACK", result)
+              success: function(resBack) {console.log("BACK", resBack)}
             });
             break;
           default:
             break;
-          
         }
     },
     error: function(error) {
@@ -118,7 +124,6 @@ const goldKey = () => {
     }
 });
 };
-
 const rollDice = () => {
   const gameId = sessionStorage.getItem("gameId");
   const diceValue = Math.floor(Math.random() * 6) + 1;
