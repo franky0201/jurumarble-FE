@@ -262,7 +262,6 @@ const rollDice = () => {
                   secondLine.innerHTML = describe;
                   thirdLine.innerHTML = ''; // thirdLine은 비우고
                 }
-
               }
             })
           }
