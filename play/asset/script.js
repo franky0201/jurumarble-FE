@@ -107,7 +107,7 @@ const goldKey = () => {
 });
 };
 
-//민준아, Data 
+//Data처리 어떻게하는게 바람직한건지 판단,
 const cellData = {
     "MAN": { "title": "남자 마시기", "desc": "남자답게 한 잔 마시기!" },
     "WOMAN": { "title": "여자 마시기", "desc": "여자답게 한 잔 마시기!" },
@@ -260,7 +260,7 @@ const rollDice = () => {
                 } else {
                   // 10글자 이하면 secondLine에만 표시
                   secondLine.innerHTML = describe;
-                  thirdLine.innerHTML = ''; // thirdLine은 비워두기
+                  thirdLine.innerHTML = ''; // thirdLine은 비우고
                 }
 
               }
