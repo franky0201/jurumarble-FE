@@ -9,13 +9,20 @@ window.onload = async () => {
     method: "GET",
     success: (res) => {
       cellCode = res;
-      getStatus(() => getMap(() => loadPlayer(() => resizing())));
+      getStatus(() => {
+        getMap(() => {
+            loadPlayer(() => {
+                resizing();
+            });
+        });
+    });
     },
   });
 };
 
 window.onresize = () => {
   resizing();
+  setHorse();
 };
 
 const getStatus = (callback = null) => {
@@ -37,6 +44,8 @@ const getStatus = (callback = null) => {
   });
 };
 
+var cellpos_top = [];
+var cellpos_left = [];
 const getMap = (callback = null) => {
   console.log("gameId: ",gameStatus.gameId);
   $.ajax({
@@ -189,10 +198,13 @@ const cellData = {
     "BOTH": { "title": "양 옆 마시기", "desc": "" },
     "NULL": { "title": "쉬는 칸", "desc": "이걸 사네" }
   };
+var img = [];
 const rollDice = () => {
-  console.log(cellData["BOTH"].title);
   const gameId = sessionStorage.getItem("gameId");
   const diceValue = Math.floor(Math.random() * 6) + 1;
+  var dice = document.getElementsByClassName("dice");
+  dice[0].innerHTML = diceValue;
+
   const image = document.getElementById("dice-image");
   $.ajax({
         url: `${baseURL}/api/v1/status/${gameId}/dice`,
@@ -200,7 +212,14 @@ const rollDice = () => {
         contentType: 'application/json',
         data: JSON.stringify({ value: diceValue }),
         success: function(result) {
+          if(typeof result.wins !== 'undefined'){
+            alert(result.wins, "승리");
+            window.location.href = baseURL+"/";
+          }
           const pos = result.position;
+          img[1].style.left = cellpos_left[pos] + 20*1+'px';
+          img[1].style.top = cellpos_top[pos] + 20*1+'px';
+
           if((pos%7)==4){//고정된 황금열쇠 판단
             goldKey();
           }
@@ -266,6 +285,10 @@ const rollDice = () => {
             })
           }
           console.log(result);
+          if(typeof result.wins !== 'undefined'){
+            alert(result.wins, "승리");
+            window.location.href = baseURL+"/";
+          }
         },
         error: function(error) {
             console.error("주사위 굴리기 오류:", error);
@@ -273,9 +296,9 @@ const rollDice = () => {
     });
 };
 
-
-
 const loadPlayer = (callback = null) => {
+  const pos = 1;
+
   let html = "";
   for (let i = 0; i < gameStatus.teams.length; i++) {
     html += `
@@ -312,8 +335,32 @@ const resizing = () => {
   set(0);
   setTimeout(() => {
     set((Math.min(window.innerHeight, window.innerWidth) - 100) / 8);
+    setHorse();
   }, 1);
 };
+
+const setHorse = () => {
+  cellpos_top[0] = 0;
+  cellpos_left[0] = 0;
+  for(let i=1; i<=28 ;i++){
+    var element = document.getElementById("cell_"+[i]);
+    var rect = element.getBoundingClientRect();
+    cellpos_top[i] = rect.top;
+    cellpos_left[i] = rect.left;
+  }
+  console.log(cellpos_top);
+  console.log(cellpos_left);
+  var element = document.getElementById("cell_"+1);
+  var rect = element.getBoundingClientRect();
+  for (let i=0;i<2;i++){
+    img[i] = document.createElement('img');
+    img[i].src = `static/cap${i+1}.png`;
+    img[i].className = `cap${i+1}`;
+    img[i].style.left = cellpos_left[1] + 10*i+'px';
+    img[i].style.top = cellpos_top[1] + 10*i+'px';
+    document.body.appendChild(img[i]);
+  }
+}
 
 // const rollDice = () => {
 //   const randomNumber = Math.floor(Math.random() * 6) + 1;

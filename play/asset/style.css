@@ -9,7 +9,6 @@ body {
   position: relative;
   font-family: "NanumBarunpen";
 }
-
 .notice {
   display: none;
 }
@@ -818,4 +817,22 @@ button:hover {
   .overlaytext3 {
     font-size: 4px;
   }
+}
+.cap1{
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+}
+.cap2{
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+}
+.cap3{
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+  position: fixed;
 }
