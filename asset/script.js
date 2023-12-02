@@ -21,5 +21,5 @@ window.onload = function () {
 };
 
 function start() {
-  location.href = "/select/?count=" + count;
+  location.href = "/jurumarble-FE/select/?count=" + count;
 }

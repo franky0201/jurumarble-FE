@@ -7,8 +7,8 @@ window.onload = function () {
   if (count !== null && !isNaN(count)) {
     count *= 1;
     if (count >= 1 && count <= 8) render(count);
-    else location.href = "/";
-  } else location.href = "/";
+    else location.href = "/jurumarble-FE/";
+  } else location.href = "/jurumarble-FE/";
 };
 
 let goal = 1;
@@ -34,7 +34,7 @@ const render = () => {
   for (let i = 1; i < count + 1; i++) {
     str += `
       <div class="user">
-        <img src="/play/static/cap${i}.png" />
+        <img src="/jurumarble-FE/play/static/cap${i}.png" />
         <input type="text" class="username" placeholder="플레이어명(팀명)"/>
       </div>
     `;
@@ -72,7 +72,7 @@ const play = () => {
     }),
     success: (res) => {
       sessionStorage.setItem("gameId", res.gameId);
-      location.href = "/play";
+      location.href = "/jurumarble-FE/play";
     },
   });
 };

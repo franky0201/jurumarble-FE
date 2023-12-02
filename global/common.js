@@ -12,14 +12,14 @@ window.addEventListener("load", () => {
 
   const id = sessionStorage.getItem("gameId");
   if (id === null) {
-  } else if (location.pathname !== "/play/") {
+  } else if (location.pathname !== "/jurumarble-FE/play/") {
     $.ajax({
       url: `${baseURL}/api/v1/status/${id}`,
       type: "GET",
       contentType: "application/json",
       success: (res) => {
         if (res === "") sessionStorage.removeItem("gameId");
-        else location.href = "/play";
+        else location.href = "/jurumarble-FE/play";
       },
     });
   }

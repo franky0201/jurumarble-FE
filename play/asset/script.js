@@ -62,7 +62,7 @@ window.onresize = () => {
 
 const getStatus = (callback = null) => {
   const gameId = sessionStorage.getItem("gameId");
-  if (!gameId) location.href = "/";
+  if (!gameId) location.href = "/jurumarble-FE/";
   $.ajax({
     url: `${baseURL}/api/v1/status/${gameId}`,
     method: "GET",
@@ -70,7 +70,7 @@ const getStatus = (callback = null) => {
     success: (res) => {
       if (res === "") {
         sessionStorage.removeItem("gameId");
-        location.href = "/";
+        location.href = "/jurumarble-FE/";
       } else {
         gameStatus = res;
         if (callback) callback();
