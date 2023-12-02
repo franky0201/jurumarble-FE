@@ -1,4 +1,4 @@
-const baseURL = "http://13.114.181.168:8080";
+const baseURL = "//13.114.181.168:8080";
 
 window.addEventListener("load", () => {
   const bgTag = document.getElementById("bg");
