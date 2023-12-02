@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'NanumBarunpen';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff')
-    format('woff');
+  font-family: "NanumBarunpen";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,7 +47,7 @@ body {
   display: block;
   height: 250px;
   margin: -25px auto;
-  z-index:2;
+  z-index: 2;
 }
 
 .user input {
@@ -55,34 +55,33 @@ body {
   font-size: 2.5vh;
   margin: 20px auto;
   padding: 6px;
-  z-index:3;
+  z-index: 3;
 }
 
 #play-count {
-  font-family: 'NanumBarunpen';
-  position : absolute;
+  font-family: "NanumBarunpen";
+  position: absolute;
   font-size: 30px;
-  left : 70%;
-  bottom : 12px;
+  left: 70%;
+  bottom: 12px;
 }
 
 #plus {
-  font-family: 'NanumBarunpen';
-  height : 30px;
+  font-family: "NanumBarunpen";
+  height: 30px;
   font-size: 30px;
-  border : none;
+  border: none;
 }
 
 #minus {
-  font-family: 'NanumBarunpen';
-  border : none;
+  font-family: "NanumBarunpen";
+  border: none;
   font-size: 30px;
-  height : 30px;
-
+  height: 30px;
 }
 
 #btn {
-  font-family: 'NanumBarunpen';
+  font-family: "NanumBarunpen";
   height: 50px;
   width: 220px;
   font-size: 30px;
@@ -149,7 +148,7 @@ body {
   }
 
   #play-count {
-    font-size:25px;
+    font-size: 25px;
   }
 }
 
@@ -171,8 +170,8 @@ body {
   }
 
   #play-count {
-    font-size:20px;
-    height : 40px;
-    left : 67%;
+    font-size: 20px;
+    height: 40px;
+    left: 67%;
   }
 }

@@ -14,17 +14,17 @@ window.onload = function () {
 let goal = 1;
 //희상이 추가부분
 function increment() {
-if (goal < 3) goal++;
-updateDisplay();
+  if (goal < 3) goal++;
+  updateDisplay();
 }
 
 function decrement() {
-if (goal > 1) goal--;
-updateDisplay();
+  if (goal > 1) goal--;
+  updateDisplay();
 }
 
 function updateDisplay() {
-document.getElementById("goal").innerText = goal;
+  document.getElementById("goal").innerText = goal;
 }
 //희상이 추가부분
 
@@ -40,7 +40,9 @@ const render = () => {
     `;
   }
   //희상이 추가부분
-  container.innerHTML = str + `
+  container.innerHTML =
+    str +
+    `
   <div id="play-count">
   <span>몇바퀴 돌래?</span>
   <button id="minus" class="btn">-</button>
@@ -48,11 +50,10 @@ const render = () => {
   <button id="plus" class="btn">+</button>
 </div>
 <button id="btn" onclick="seletcion()">설정</button><button id="btn" onclick="play()">설정</button>`;
-//희상이 추가부분
-document.getElementById("plus").addEventListener("click", increment);
-document.getElementById("minus").addEventListener("click", decrement);
+  //희상이 추가부분
+  document.getElementById("plus").addEventListener("click", increment);
+  document.getElementById("minus").addEventListener("click", decrement);
 };
-
 
 const play = () => {
   const teams = [];
@@ -75,4 +76,3 @@ const play = () => {
     },
   });
 };
-

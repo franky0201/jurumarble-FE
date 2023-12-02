@@ -369,6 +369,11 @@ button:hover {
   top: 70%;
 }
 
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
 @media (max-width: 2000px) {
   .player {
     height: 70px;
@@ -818,19 +823,19 @@ button:hover {
     font-size: 4px;
   }
 }
-.cap1{
+.cap1 {
   z-index: 1000;
   width: 30px;
   height: 30px;
   position: fixed;
 }
-.cap2{
+.cap2 {
   z-index: 1000;
   width: 30px;
   height: 30px;
   position: fixed;
 }
-.cap3{
+.cap3 {
   z-index: 1000;
   width: 30px;
   height: 30px;
